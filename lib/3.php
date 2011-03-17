@@ -1,22 +1,16 @@
 <?php
-//$val = 600851475143;
-$val = 13195
+$val = 600851475143;
 
-for( $n = ( $val / 2 ); $n > 0; $n-- )
+// got help with this one :C
+function largest_prime_factor( $n )
 {
-	if( $val % n != ) continue;
-	$prime = 1;
-	for( $f = 2; $f <= ( $n / 2 ); $f++ )
+	$i = 2;
+	while( $i < $n )
 	{
-		if( $n % $f == 0 )
-		{
-			$prime = 0;
-			break;
-		}
+		if( $n % $i == 0 )
+			$n = $n/$i;
+		$i++;
 	}
-	if( $prime == 1 )
-	{
-		echo $n;
-		break;
-	}
+	return $n;
 }
+echo largest_prime_factor( $val );

@@ -1,16 +1,13 @@
 val = 600851475143
 #val = 13195
-(val/2).downto(1) do |n|
-	next if val%n != 0
-	prime = 1
-	(2..n/2).each do |f| 
-		if n%f == 0
-			prime = 0
-			break
-		end
+
+# i found help for this one :C
+def lpf( n )
+	i = 2
+	while i < n
+		n = n/i if n % i == 0
+		i += 1
 	end
-	if prime == 1
-		puts n
-		break
-	end
+	n
 end
+puts lpf( val )
