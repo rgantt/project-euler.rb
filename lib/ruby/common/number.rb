@@ -9,3 +9,8 @@ def sed( first, last )
         return n if flag == 1
     end
 end
+
+def fact(n)
+   (2..n-1).each {|i| n*= i}
+   n
+end
