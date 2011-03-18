@@ -20,3 +20,14 @@ def prime?( n )
     end
     true
 end
+
+def euler_sieve(list)
+    prime = []
+    while list != [] do
+        new = list.map { |i| list[0] * i }
+        sub = list - new
+        prime << sub.shift
+        list = sub
+    end
+    prime
+end
