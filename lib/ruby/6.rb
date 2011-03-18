@@ -1,7 +1,5 @@
-limit = 100
-sq = 0
+limit, sq = 100, 0
 (1..limit).each do |n|
     sq += n**2
 end
-sum = (limit+1)*limit/2
-puts sum**2 - sq
+puts ((limit+1)*limit/2)**2 - sq
