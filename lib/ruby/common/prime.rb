@@ -8,8 +8,13 @@ def lpf( n )
 end
 
 def prime?( n )
-    (2..n/2).each do |i|
-        if( n % i == 0 )
+	return nil if n == 1
+	return true if n < 4
+	return nil if n % 2 == 0
+	return true if n < 9
+	return nil if n % 3 == 0
+    (5..Math.sqrt(n).floor).step(6) do |i|
+        if n % i == 0 or n % ( i + 2 ) == 0
             return nil
         end
     end
