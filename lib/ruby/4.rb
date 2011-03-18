@@ -1,9 +1,11 @@
-# 9009 = 91 x 99
-palindromes = []
-(100..999).each do |i|
-    (100..999).each do |j|
+# find the largest palindrome made from 
+# the product of two 3-digit numbers
+
+min, max, palindrome = 100, 999, 0
+(min..max).each do |i|
+    (min..i).each do |j|
         val = i*j
-        palindromes << val if val.to_s == val.to_s.reverse
+        palindrome = val if val.to_s == val.to_s.reverse and val > palindrome
     end
 end
-puts palindromes.each{ |s| s = s.to_i }.max
+puts palindrome
