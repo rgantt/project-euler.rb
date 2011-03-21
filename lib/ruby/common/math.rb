@@ -10,13 +10,9 @@ module Math
 			factors
 		end
 		
-		# the sum of the divisors of an integer n
+		# the sum of the divisors of an integer n, excluding n
 		def d(n)
-			divisors = 0
-			(1..n/2).each do |i|
-				divisors += i if n%i == 0
-			end
-			divisors
+			factors(n).inject{|s,i| s+i} - n
 		end
 		
 		# find the smallest number that divides every number between first and last
@@ -34,8 +30,7 @@ module Math
 		
 		# return the factorial of integer n
 		def fact(n)
-		(2..n-1).each {|i| n*= i}
-		n
+			(2..n).inject{|s,i| s*i}
 		end
 		
 		# find the length of the collatz chain for integer n
