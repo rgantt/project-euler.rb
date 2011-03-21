@@ -1,17 +1,11 @@
 # evaluate the sum of all the amicable numbers under 10000.
-bound = 7000
+require 'common/number'
 
-def d(n)
-	divisors = 0
-	(1..n/2).each do |i|
-		divisors += i if n%i == 0
-	end
-	divisors
-end
+bound = 7000
 
 sf = [0]
 (1..bound).each do |n|
-	sf << d(n)
+	sf << Math.d(n)
 end
 
 # a and b are amicable if d(b) = a and d(a) = b and a != b

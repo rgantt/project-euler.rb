@@ -3,7 +3,7 @@ require 'common/difference'
 
 digits, f, n = 1000, 0, 1
 while f.to_s.length < digits
-	f = fib n
+	f = Math.fib n
 	n += 1
 end
 puts n

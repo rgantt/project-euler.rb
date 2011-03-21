@@ -1,3 +1,3 @@
 require 'common/number'
 
-puts sed( 1, 20 )
+puts Math.sed( 1, 20 )

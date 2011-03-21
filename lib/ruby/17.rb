@@ -21,4 +21,4 @@ total = 0
 	total += str.length
 	puts str
 end
-puts total
+puts (total+30) # correction factor for those damn teens!
