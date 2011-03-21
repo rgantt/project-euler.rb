@@ -1,1 +1,3 @@
 My solutions to the problems on projecteuler.net. All are implemented in Ruby, some are implemented in PHP.
+
+Ruby implementations are run on 1.8.6, so Enumerable.inject(sym) is not available :C
