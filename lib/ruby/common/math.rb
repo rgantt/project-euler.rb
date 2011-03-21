@@ -46,8 +46,7 @@ module Math
 		
 		# greatest common divisor of a and b [equal to gcd(b,a%b)]
 		def gcd( a, b )
-			a,b = b,a%b
-			return (a*b)/lcm(a,b)
+			return (b*(a%b))/lcm(b,a%b)
 		end
 		
 		# least common multiple of a and b
