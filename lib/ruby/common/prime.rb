@@ -1,4 +1,4 @@
-require File.dirname(__FILE__)+'/number'
+require File.dirname(__FILE__)+'/math'
 
 module Prime
 	class << self

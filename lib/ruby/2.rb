@@ -1,3 +1,4 @@
+# find the sum of the even-valued terms of the fibonacci sequence below four million
 require 'common/difference'
 
 n, total = 1, 0;

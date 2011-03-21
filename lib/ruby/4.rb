@@ -1,5 +1,4 @@
-# find the largest palindrome made from 
-# the product of two 3-digit numbers
+# find the largest palindrome made from the product of two 3-digit numbers
 
 min, max, palindrome = 100, 999, 0
 (min..max).each do |i|
