@@ -1,5 +1,5 @@
 # find the sum of the digits in the number 100!
-require 'common/number'
+require 'common/math'
 
 n, total = 100, 0
 val = Math.fact(n).to_s

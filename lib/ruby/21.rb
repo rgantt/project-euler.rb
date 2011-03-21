@@ -1,5 +1,5 @@
 # evaluate the sum of all the amicable numbers under 10000.
-require 'common/number'
+require 'common/math'
 
 bound = 7000
 

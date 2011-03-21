@@ -1,6 +1,6 @@
 # find the integer n (for n < 1,000,000) that has
 # the longest collatz chain
-require 'common/number'
+require 'common/math'
 
 lim, chains = 1000000, []
 lim.downto(3) do |n|

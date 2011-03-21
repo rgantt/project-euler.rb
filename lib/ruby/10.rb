@@ -1,7 +1,7 @@
 #calculate the sum of all primes below 2 million
 require 'common/prime'
 cap, composites = 2000000, 0
-primes = Math::prime.euler_sieve( (2..Math.sqrt(cap).ceil).to_a )
+primes = Prime.euler_sieve( (2..Math.sqrt(cap).ceil).to_a )
 (1..cap).each do |n|
 	composite = nil
 	primes.each do |p|

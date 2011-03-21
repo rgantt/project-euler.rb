@@ -1,5 +1,5 @@
 # What is the value of the first triangle number to have over five hundred divisors?
-require 'common/number'
+require 'common/math'
 count, n, triangle = 50, 1, 0
 while true
 	triangle = n*(n+1)/2
