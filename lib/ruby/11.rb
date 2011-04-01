@@ -26,13 +26,13 @@ grid = [
 def max_product_local( grid, x, y )
 	phoriz = nhoriz = pvert = nvert = ppdiag = pndiag = nndiag = npdiag = 0
 	phoriz = grid[x][y].to_i*grid[x+1][y].to_i*grid[x+2][y].to_i*grid[x+3][y].to_i if x > 2 and x < 17
-	nhoriz = grid[x][y].to_i*grid[x-1][y].to_i*grid[x-2][y].to_i*grid[x-3][y].to_i if x > 3
+	#nhoriz = grid[x][y].to_i*grid[x-1][y].to_i*grid[x-2][y].to_i*grid[x-3][y].to_i if x > 3
 	pvert = grid[x][y].to_i*grid[x][y+1].to_i*grid[x][y+2].to_i*grid[x][y+3].to_i if y < 17
-	nvert = grid[x][y].to_i*grid[x][y-1].to_i*grid[x][y-2].to_i*grid[x][y-3].to_i if x > 2
+	#nvert = grid[x][y].to_i*grid[x][y-1].to_i*grid[x][y-2].to_i*grid[x][y-3].to_i if x > 2
 	ppdiag = grid[x][y].to_i*grid[x+1][y+1].to_i*grid[x+2][y+2].to_i*grid[x+3][y+3].to_i if x < 17 and y > 2
 	pndiag = grid[x][y].to_i*grid[x+1][y-1].to_i*grid[x+2][y-2].to_i*grid[x+3][y-3].to_i if x < 17 and y < 17
-	nndiag = grid[x][y].to_i*grid[x-1][y-1].to_i*grid[x-2][y-2].to_i*grid[x-3][y-3].to_i if x > 2 and y < 17
-	npdiag = grid[x][y].to_i*grid[x-1][y+1].to_i*grid[x-2][y+2].to_i*grid[x-3][y+3].to_i if x > 2 and y > 2
+	#nndiag = grid[x][y].to_i*grid[x-1][y-1].to_i*grid[x-2][y-2].to_i*grid[x-3][y-3].to_i if x > 2 and y < 17
+	#npdiag = grid[x][y].to_i*grid[x-1][y+1].to_i*grid[x-2][y+2].to_i*grid[x-3][y+3].to_i if x > 2 and y > 2
 	return [ phoriz, nhoriz, pvert, nvert, ppdiag, pndiag, nndiag, npdiag ].max
 end
 
@@ -44,3 +44,5 @@ max = 0
 	end
 end
 puts max
+
+# 70600674
