@@ -2,12 +2,9 @@
 @_grid = [[]] # filling out the grid for O(1) lookups!
 def val( i, j )
 	return @_grid[i][j] if (@_grid[i] and @_grid[i][j])
-	return 1 if i == 0 and j == 0
-	return 1 if i == 0
+	return 1 if i == 0 or j == 0
 	tot = 0
-	0.upto(j){ |n|
-		tot += val( i - 1, n )
-	}
+	0.upto(j){ |n| tot += val( i - 1, n ) }
 	@_grid[i] = [] if !(@_grid[i])
 	@_grid[i][j] = tot
 	tot
