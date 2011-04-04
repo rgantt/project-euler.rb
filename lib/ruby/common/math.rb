@@ -9,10 +9,14 @@ module Math
 			factors << n
 			factors
 		end
+
+		def combinations( n, k )
+			return fact(n)/(fact(n-k)*fact(k))
+		end
 		
 		# the sum of the divisors of an integer n, excluding n
 		def d(n)
-			factors(n).inject{|s,i| s+i} - n
+			factors(n).inject(:+) - n
 		end
 		
 		# find the smallest number that divides every number between first and last
@@ -30,7 +34,7 @@ module Math
 		
 		# return the factorial of integer n
 		def fact(n)
-			(2..n).inject{|s,i| s*i}
+			(1..n).inject(:*)
 		end
 		
 		# find the length of the collatz chain for integer n
