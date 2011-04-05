@@ -1,3 +1,5 @@
+require "prime"
+
 module Math
 	class << self
 		# all factors of an integer n
@@ -8,6 +10,27 @@ module Math
 			end
 			factors << n
 			factors
+		end
+		
+		def count_factors(n)
+			factors = 3
+			top = Math.sqrt(n).ceil
+			(1..top).each do |i|
+				factors += 1 if n%i == 0
+			end
+			factors
+		end
+		
+		def recompose( prime_factors, n )
+			factors = [1]
+			prime_factors.each do |p|
+				(1..Math.sqrt(n)).each do |k|
+					break if n % p[0]**k != 0
+					factors << p[0]**k
+					factors << ( n / p[0]**k )
+				end
+			end
+			(factors + [n]).uniq.sort
 		end
 
 		def combinations( n, k )
