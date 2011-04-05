@@ -6,4 +6,5 @@ while ( n += 1 ) < 100000 # don't really know how to clamp down the upper bound 
 	val = "0"+n.to_s
 	set << n if (0..val.length-1).inject{ |s,i| s + Math.fact( val[i,1].to_i ) } == n
 end
+puts set.to_s
 puts set.inject(:+)
