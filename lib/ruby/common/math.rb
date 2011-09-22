@@ -12,6 +12,10 @@ module Math
 			factors
 		end
 		
+		def proper_factors n
+			return factors(n) - [n]
+		end
+		
 		def count_factors(n)
 			factors = 3
 			top = Math.sqrt(n).ceil

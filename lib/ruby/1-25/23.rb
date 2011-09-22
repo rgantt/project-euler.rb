@@ -1,17 +1,22 @@
 # find the sum of all the positive integers which cannot be written as the sum of two abundant numbers
-# lower limit 1
-# upper limit 28123
-# find all abundant numbers below 28123, add all combinations of them, then remove this total from 28123(28123+1)/2
 require File.dirname(__FILE__)+"/../common/math"
 
-def abundant_up_to( n )
-	# abundant number: a number for which the sum of its proper divisors exceeds it
+# the efficiency of this algorithm is acceptable
+def abundants_less_than( n )
 	abundants = []
 	(12..n).each do |i|
 		abundants << i if Math.proper_factors(i).inject(:+) > i
 	end
 	abundants
 end
-
-as = abundant_up_to(28123/12)
-puts (28123*(28124)/2) - as.product(as).inject(:+).inject(:+)
+max = 20161
+ab = abundants_less_than max
+ans = []
+ab.each do |a|
+	ab.each do |b|
+		n = a + b
+		break if n > max
+		ans << n
+	end
+end
+puts ((1..max).to_a - ans).inject(:+)
