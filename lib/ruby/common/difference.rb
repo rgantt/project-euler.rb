@@ -1,16 +1,16 @@
 module Math
-	@_cache = []
+	@memo = []
 	class << self
-		# now with caching! silly me
-		def fib( n )
-			return @_cache[n] if @_cache.at(n)
-			if n <=	2 
-				val = n
-			else
-				val = fib( n - 1 ) + fib( n - 2 )
-			end
-			@_cache[n] = val
-			val
+	# now with memoization!
+	def fib( n )
+		return @memo[n] if @memo.at(n)
+		if n <=	2 
+			val = n
+		else
+			val = fib( n - 1 ) + fib( n - 2 )
 		end
+		@memo[n] = val
+		val
+	end
 	end
 end
